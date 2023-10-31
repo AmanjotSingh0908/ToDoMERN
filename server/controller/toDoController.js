@@ -1,7 +1,9 @@
 const ToDoModel = require('../models/toDoModel')
 
 module.exports.getToDo = async (req,res) => {
+    console.log("Inside getToDo")
     const toDo = await ToDoModel.find()
+    console.log(toDo);
     res.send(toDo)
 }
 

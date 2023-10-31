@@ -21,6 +21,6 @@ mongoose.connect(process.env.MONGO_URL).then(()=>{
     throw err;
 })
 
-app.use(routes)
+app.use("/", routes)
 
 app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`))
