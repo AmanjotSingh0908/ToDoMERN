@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getAllToDo = (setToDo) => {
     axios
-    .get("http://localhost:5000")
+    .get("https://todomernbackend-dn07.onrender.com")
     .then(({data}) => {
         console.log('data ===> ', data);
         setToDo(data)
@@ -12,7 +12,7 @@ const getAllToDo = (setToDo) => {
 const addToDo = (text, setText, setToDo) => {
  
     axios
-    .post("http://localhost:5000/save", {text})
+    .post("https://todomernbackend-dn07.onrender.com/save", {text})
     .then((data) => {
         console.log(data);
         setText("")
@@ -23,7 +23,7 @@ const addToDo = (text, setText, setToDo) => {
 const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
  
     axios
-    .post("http://localhost:5000/update", {_id:toDoId, text})
+    .post("https://todomernbackend-dn07.onrender.com/update", {_id:toDoId, text})
     .then((data) => {
         setText("")
         setIsUpdating(false)
@@ -35,7 +35,7 @@ const updateToDo = (toDoId, text, setToDo, setText, setIsUpdating) => {
 const deleteToDo = (_id, setToDo) => {
  
     axios
-    .post("http://localhost:5000/delete", { _id })
+    .post("https://todomernbackend-dn07.onrender.com/delete", { _id })
     .then((data) => {
         console.log(data)
         getAllToDo(setToDo)
